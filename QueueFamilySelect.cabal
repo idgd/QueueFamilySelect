@@ -1,0 +1,64 @@
+cabal-version: 1.24
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           QueueFamilySelect
+version:        0.1.0.0
+synopsis:       A tiny library to choose Vulkan queue families.
+description:    Please see the README on GitHub at <https://github.com/idgd/QueueFamilySelect#readme>
+category:       Graphics
+homepage:       https://github.com/idgd/QueueFamilySelect#readme
+bug-reports:    https://github.com/idgd/QueueFamilySelect/issues
+author:         idgd
+copyright:      2022 idgd
+license:        AGPL-3
+license-file:   LICENSE
+build-type:     Custom
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/idgd/QueueFamilySelect
+
+custom-setup
+  setup-depends:
+      Cabal
+    , base >=4.7 && <5
+    , process
+
+library
+  exposed-modules:
+      QueueFamilySelect
+  other-modules:
+      Paths_QueueFamilySelect
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      QuickCheck
+    , base >=4.7 && <5
+    , quickcheck-instances
+    , vector
+    , vector-algorithms
+  default-language: Haskell2010
+
+test-suite QueueFamilySelect-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.lhs
+  other-modules:
+      Paths_QueueFamilySelect
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QueueFamilySelect
+    , QuickCheck
+    , base >=4.7 && <5
+    , quickcheck-instances
+    , vector
+    , vector-algorithms
+  default-language: Haskell2010
